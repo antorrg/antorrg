@@ -25,15 +25,19 @@ El bootcamp de "Soy Henry" me permitió alcanzar el conocimiento y la práctica 
 * Sequelize
 * PostgresSQL
 * Git
+
+ 
+
+## ¡No dudes en contactarme!
 <p align="left">
  <a href="https://linkedin.com/in/antonio-ricardo-rodriguez-gramajo-9b4342277/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="antonio-ricardo-rodriguez-gramajo-9b4342277/" height="30" width="40" /></a>
 <a href="https://twitter.com/antonio198511" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="antonio198511" height="30" width="40" /></a>
  
 
-<a href="https://www.youtube.com/channel/UC6ICpvEY4RIjmn2fsDY-vgA" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="el-hani - الهــاني" height="30" width="40" /></a>
- 
+<!--
+<a href="https://www.youtube.com/channel/UCeMawJAPUWfxuQGoKkuzX2A" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="el-hani - الهــاني" height="30" width="40" /></a>
+-->
 
-## ¡No dudes en contactarme!
 
 [ Mi perfil de Linkedin](https://www.linkedin.com/in/antonio-ricardo-rodriguez-gramajo-9b4342277)
 

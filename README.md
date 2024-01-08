@@ -1,6 +1,7 @@
 ## ¡Hola! Mi nombre es Antonio R. Rodriguez Gramajo.
 Mi usuario de GitHub es "antorrg".
-- 📫 Como contactarme: antoniorodriguezgramajo@gmail.com
+
+📫 Como contactarme: antoniorodriguezgramajo@gmail.com
 
 ## Quien soy:
 Soy un programador fullstack. 

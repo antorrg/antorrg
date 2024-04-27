@@ -26,6 +26,8 @@ El bootcamp de "Soy Henry" me permitió alcanzar el conocimiento y la práctica 
 * Express
 * Sequelize
 * PostgresSQL
+* MongoDb
+* Mongoose
 * Git
 * Linux
 * Bash

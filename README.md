@@ -4,7 +4,7 @@ Mi usuario de GitHub es "antorrg".
 📫 Como contactarme: antoniorodriguezgramajo@gmail.com
 
 ## Quien soy:
-Soy un programador fullstack. 
+Soy un programador fullstack con Node.js. 
 
 
 Desde hace mucho tiempo me intereso la programación pero no fue hasta el día que encontre una oportunidad de estudiar en "Soy Henry" que esto pudo hacerse realidad.
@@ -25,6 +25,7 @@ El bootcamp de "Soy Henry" me permitió alcanzar el conocimiento y la práctica 
 * Redux
 * Node.js
 * Express
+* Pug
 * Sequelize
 * PostgresSQL
 * MongoDb

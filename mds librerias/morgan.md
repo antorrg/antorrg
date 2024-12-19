@@ -415,3 +415,362 @@ function assignId (req, res, next) {
 [npm-version-image]: https://badgen.net/npm/v/morgan
 [travis-image]: https://badgen.net/travis/expressjs/morgan/master
 [travis-url]: https://travis-ci.org/expressjs/morgan
+<hr>
+### Info en español:
+
+Claro, aquí tienes la traducción del documento sobre Morgan, un middleware de registro de solicitudes HTTP para Node.js.
+
+---
+
+# Middleware de registro de solicitudes HTTP para Node.js
+
+Llamado así por Dexter, un programa que no deberías ver hasta completarlo.
+
+## API
+
+```javascript
+var morgan = require('morgan')
+morgan(format, options)
+```
+
+Crea una nueva función de middleware de registro de Morgan utilizando el formato y las opciones dadas. El argumento `format` puede ser una cadena de un nombre predefinido (ver más abajo los nombres), una cadena de un formato de cadena, o una función que producirá una entrada de registro.
+
+La función de formato será llamada con tres argumentos: `tokens`, `req` y `res`, donde `tokens` es un objeto con todos los tokens definidos, `req` es la solicitud HTTP y `res` es la respuesta HTTP. Se espera que la función devuelva una cadena que será la línea de registro, o `undefined` / `null` para omitir el registro.
+
+### Usando una cadena de formato predefinido
+
+```javascript
+morgan('tiny')
+```
+
+### Usando una cadena de formato de tokens predefinidos
+
+```javascript
+morgan(':method :url :status :res[content-length] - :response-time ms')
+```
+
+### Usando una función de formato personalizada
+
+```javascript
+morgan(function (tokens, req, res) {
+  return [
+    tokens.method(req, res),
+    tokens.url(req, res),
+    tokens.status(req, res),
+    tokens.res(req, res, 'content-length'), '-',
+    tokens['response-time'](req, res), 'ms'
+  ].join(' ')
+})
+```
+
+## Opciones
+
+Morgan acepta estas propiedades en el objeto `options`.
+
+### immediate
+
+Escribe la línea de registro en la solicitud en lugar de la respuesta. Esto significa que las solicitudes serán registradas incluso si el servidor se cae, pero los datos de la respuesta (como el código de respuesta, longitud del contenido, etc.) no pueden ser registrados.
+
+### skip
+
+Función para determinar si se omite el registro, por defecto es `false`. Esta función será llamada como `skip(req, res)`.
+
+```javascript
+// EJEMPLO: solo registrar respuestas de error
+morgan('combined', {
+  skip: function (req, res) { return res.statusCode < 400 }
+})
+```
+
+### stream
+
+Flujo de salida para escribir líneas de registro, por defecto es `process.stdout`.
+
+## Formatos Predefinidos
+
+Hay varios formatos predefinidos disponibles:
+
+### combined
+
+Salida estándar de registro combinado de Apache.
+
+```
+:remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"
+```
+
+### common
+
+Salida estándar de registro común de Apache.
+
+```
+:remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length]
+```
+
+### dev
+
+Salida concisa con colores por estado de respuesta para uso en desarrollo. El token `:status` será coloreado verde para códigos de éxito, rojo para códigos de error del servidor, amarillo para códigos de error del cliente, cian para códigos de redirección, y sin color para códigos informativos.
+
+```
+:method :url :status :response-time ms - :res[content-length]
+```
+
+### short
+
+Más corto que el formato predeterminado, también incluye el tiempo de respuesta.
+
+```
+:remote-addr :remote-user :method :url HTTP/:http-version :status :res[content-length] - :response-time ms
+```
+
+### tiny
+
+La salida mínima.
+
+```
+:method :url :status :res[content-length] - :response-time ms
+```
+
+## Tokens
+
+### Crear nuevos tokens
+
+Para definir un token, simplemente invoca `morgan.token()` con el nombre y una función de devolución de llamada. Se espera que esta función de devolución de llamada devuelva un valor de cadena. El valor devuelto está disponible como `:type` en este caso:
+
+```javascript
+morgan.token('type', function (req, res) { return req.headers['content-type'] })
+```
+
+Llamar a `morgan.token()` usando el mismo nombre que un token existente sobrescribirá esa definición de token.
+
+Se espera que la función de token sea llamada con los argumentos `req` y `res`, que representan la solicitud HTTP y la respuesta HTTP. Además, el token puede aceptar más argumentos a su elección para personalizar el comportamiento.
+
+### :date[format]
+
+La fecha y hora actual en UTC. Los formatos disponibles son:
+
+- `clf` para el formato de registro común ("10/Oct/2000:13:55:36 +0000")
+- `iso` para el formato de fecha y hora ISO 8601 (2000-10-10T13:55:36.000Z)
+- `web` para el formato de fecha y hora RFC 1123 (Tue, 10 Oct 2000 13:55:36 GMT)
+
+Si no se da formato, el predeterminado es `web`.
+
+### :http-version
+
+La versión HTTP de la solicitud.
+
+### :method
+
+El método HTTP de la solicitud.
+
+### :referrer
+
+El encabezado Referrer de la solicitud. Usará el encabezado Referer mal escrito estándar si existe, de lo contrario Referrer.
+
+### :remote-addr
+
+La dirección remota de la solicitud. Usará `req.ip`, de lo contrario el valor estándar `req.connection.remoteAddress` (dirección del socket).
+
+### :remote-user
+
+El usuario autenticado como parte de la autenticación básica para la solicitud.
+
+### :req[header]
+
+El encabezado dado de la solicitud. Si el encabezado no está presente, el valor se mostrará como "-" en el registro.
+
+### :res[header]
+
+El encabezado dado de la respuesta. Si el encabezado no está presente, el valor se mostrará como "-" en el registro.
+
+### :response-time[digits]
+
+El tiempo entre la solicitud que llega a Morgan y cuando se escriben los encabezados de la respuesta, en milisegundos.
+
+El argumento `digits` es un número que especifica la cantidad de dígitos a incluir en el número, siendo 3 el valor predeterminado, lo que proporciona precisión de microsegundos.
+
+### :status
+
+El código de estado de la respuesta.
+
+Si el ciclo de solicitud/respuesta se completa antes de que se envíe una respuesta al cliente (por ejemplo, el socket TCP se cerró prematuramente por un cliente que aborta la solicitud), entonces el estado estará vacío (mostrado como "-" en el registro).
+
+### :total-time[digits]
+
+El tiempo entre la solicitud que llega a Morgan y cuando la respuesta ha terminado de ser escrita en la conexión, en milisegundos.
+
+El argumento `digits` es un número que especifica la cantidad de dígitos a incluir en el número, siendo 3 el valor predeterminado, lo que proporciona precisión de microsegundos.
+
+### :url
+
+La URL de la solicitud. Usará `req.originalUrl` si existe, de lo contrario `req.url`.
+
+### :user-agent
+
+El contenido del encabezado User-Agent de la solicitud.
+
+## morgan.compile(format)
+
+Compila una cadena de formato en una función de formato para ser utilizada por Morgan. Una cadena de formato es una cadena que representa una sola línea de registro y puede utilizar la sintaxis de tokens. Los tokens son referenciados por `:token-name`. Si los tokens aceptan argumentos, pueden ser pasados usando `[]`, por ejemplo: `:token-name[pretty]` pasaría la cadena 'pretty' como un argumento al token `token-name`.
+
+La función devuelta de `morgan.compile` toma tres argumentos `tokens`, `req` y `res`, donde `tokens` es un objeto con todos los tokens definidos, `req` es la solicitud HTTP y `res` es la respuesta HTTP. La función devolverá una cadena que será la línea de registro, o `undefined` / `null` para omitir el registro.
+
+Normalmente, los formatos se definen usando `morgan.format(name, format)`, pero para ciertos usos avanzados, esta función de compilación está directamente disponible.
+
+## Ejemplos
+
+### express/connect
+
+Aplicación simple que registrará todas las solicitudes en el formato combinado de Apache a `STDOUT`.
+
+```javascript
+var express = require('express')
+var morgan = require('morgan')
+
+var app = express()
+
+app.use(morgan('combined'))
+
+app.get('/', function (req, res) {
+  res.send('hello, world!')
+})
+```
+
+### Servidor HTTP estándar
+
+Aplicación simple que registrará todas las solicitudes en el formato combinado de Apache a `STDOUT`.
+
+```javascript
+var finalhandler = require('finalhandler')
+var http = require('http')
+var morgan = require('morgan')
+
+// crear "middleware"
+var logger = morgan('combined')
+
+http.createServer(function (req, res) {
+  var done = finalhandler(req, res)
+  logger(req, res, function (err) {
+    if (err) return done(err)
+
+    // responder a la solicitud
+    res.setHeader('content-type', 'text/plain')
+    res.end('hello, world!')
+  })
+})
+```
+
+### Escribir registros a un archivo
+
+#### Archivo único
+
+Aplicación simple que registrará todas las solicitudes en el formato combinado de Apache en el archivo `access.log`.
+
+```javascript
+var express = require('express')
+var fs = require('fs')
+var morgan = require('morgan')
+var path = require('path')
+
+var app = express()
+
+// crear un flujo de escritura (en modo de añadir)
+
+
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
+
+// configurar el registrador
+app.use(morgan('combined', { stream: accessLogStream }))
+
+app.get('/', function (req, res) {
+  res.send('hello, world!')
+})
+```
+
+#### Rotación de archivos de registro
+
+Aplicación simple que registrará todas las solicitudes en el formato combinado de Apache a un archivo de registro por día en el directorio `log/` usando el módulo `rotating-file-stream`.
+
+```javascript
+var express = require('express')
+var morgan = require('morgan')
+var path = require('path')
+var rfs = require('rotating-file-stream') // versión 2.x
+
+var app = express()
+
+// crear un flujo de escritura rotativo
+var accessLogStream = rfs.createStream('access.log', {
+  interval: '1d', // rotar diariamente
+  path: path.join(__dirname, 'log')
+})
+
+// configurar el registrador
+app.use(morgan('combined', { stream: accessLogStream }))
+
+app.get('/', function (req, res) {
+  res.send('hello, world!')
+})
+```
+
+### Registro dividido / dual
+
+El middleware Morgan puede ser utilizado tantas veces como sea necesario, permitiendo combinaciones como:
+
+- Registrar una entrada en la solicitud y otra en la respuesta
+- Registrar todas las solicitudes en un archivo, pero los errores en la consola
+- ... ¡y más!
+
+Aplicación de ejemplo que registrará todas las solicitudes en un archivo usando el formato Apache, pero las respuestas de error se registran en la consola:
+
+```javascript
+var express = require('express')
+var fs = require('fs')
+var morgan = require('morgan')
+var path = require('path')
+
+var app = express()
+
+// registrar solo respuestas 4xx y 5xx en la consola
+app.use(morgan('dev', {
+  skip: function (req, res) { return res.statusCode < 400 }
+}))
+
+// registrar todas las solicitudes en `access.log`
+app.use(morgan('common', {
+  stream: fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
+}))
+
+app.get('/', function (req, res) {
+  res.send('hello, world!')
+})
+```
+
+### Usar formatos de token personalizados
+
+Aplicación de ejemplo que usará formatos de token personalizados. Esto agrega un ID a todas las solicitudes y lo muestra usando el token `:id`.
+
+```javascript
+var express = require('express')
+var morgan = require('morgan')
+var uuid = require('node-uuid')
+
+morgan.token('id', function getId (req) {
+  return req.id
+})
+
+var app = express()
+
+app.use(assignId)
+app.use(morgan(':id :method :url :response-time'))
+
+app.get('/', function (req, res) {
+  res.send('hello, world!')
+})
+
+function assignId (req, res, next) {
+  req.id = uuid.v4()
+  next()
+}
+```
+
+---

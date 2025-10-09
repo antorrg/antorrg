@@ -38,18 +38,10 @@ El bootcamp de "Soy Henry" me permitió alcanzar el conocimiento y la práctica 
 * Git
 * Linux
 * Bash
+
+<hr>
   
-<p align="left"> 
-<a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> <a href="https://www.typescriptlang.org/"  target="_blank" rel="noreferrer"><img src="https://cdn.simpleicons.org/typescript/3178C6" width="40" height="40" alt="TypeScript"/></a><a href="https://jestjs.io/" target="_blank" rel="noreferrer"><img src="https://cdn.simpleicons.org/jest/C21325" width="40" height="40" alt="Jest"/></a><a href="https://vitest.dev/" terget="_blank" rel="noreferrer"><img src="https://cdn.simpleicons.org/vitest/6E9F18" width="40" height="40" alt="Vitest"/></a><a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://redux.js.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="40" height="40"/></a> </p>
-
-<p><a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1675637255386/f3a9a38b-116d-4b35-8f46-8d8abb78166f.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" alt="express" width="50" height="30"/> </a> <a href="https://sequelize.org" target="_blank" rel="noreferrer"> <img src="https://cdn.freebiesupply.com/logos/large/2x/sequelize-logo-png-transparent.png" width="40" height = "40" alt="Sequelize logo" /> </p><a href="https://www.prisma.io/" target="_blank" rel="noreferrer"><img src="https://cdn.simpleicons.org/prisma/2D3748" width="40" height="40" alt="Prisma"/></a><a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/></a><a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"><img src="https://cdn.simpleicons.org/mongodb/47A248" width="40" height="40" alt="MongoDB"/></a></p>
-
-<p><a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/></a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/></a> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/></a></p> 
-
-<hr/>
-<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: flex-start;">
-
-  <!-- Fila 1 -->
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: flex-start;  margin-top: 20px;">
   <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5" width="40" height="40"/>
   </a>
@@ -74,7 +66,8 @@ El bootcamp de "Soy Henry" me permitió alcanzar el conocimiento y la práctica 
   <a href="https://redux.js.org" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="Redux" width="40" height="40"/>
   </a>
-
+ </div>
+ <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: flex-start; margin-top: 20px;">
   <!-- Fila 2 -->
   <a href="https://nodejs.org" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="Node.js" width="40" height="40"/>
@@ -94,7 +87,8 @@ El bootcamp de "Soy Henry" me permitió alcanzar el conocimiento y la práctica 
   <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer">
     <img src="https://cdn.simpleicons.org/mongodb/47A248" alt="MongoDB" width="40" height="40"/>
   </a>
-
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: flex-start;  margin-top: 20px;">
   <!-- Fila 3 -->
   <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
     <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" width="40" height="40"/>
@@ -105,8 +99,8 @@ El bootcamp de "Soy Henry" me permitió alcanzar el conocimiento y la práctica 
   <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer">
     <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="Bash" width="40" height="40"/>
   </a>
-
 </div>
+
 
 
 

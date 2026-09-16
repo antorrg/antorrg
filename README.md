@@ -28,13 +28,19 @@ Aplicación híbrida: páginas públicas SSR + panel admin SPA.
 
 - Demo: https://hibridapiexpress.onrender.com
 
-### 3) Nomades — Full-Stack (React + Express + PostgreSQL)
+### 3) Nomades — Full-Stack (React + Express + TypeScript + PostgreSQL)
 
 Monorepo full-stack con testing e integración de imágenes.  
 
-- Repo: https://github.com/antorrg/nomades  
+- Repo: https://github.com/antorrg/nomadesTs2026 
 
 - Demo: https://nomades.onrender.com
+
+### 4) MerakiNode — Full-Stack (Electron + Typescript + React + better-sqlite3)
+
+Proyecto de electron para un Sistema de Gestión Médica e Historias Clínicas
+
+- Repo: https://github.com/antorrg/merakiNode
 
 ---
 

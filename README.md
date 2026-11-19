@@ -20,7 +20,7 @@ Librería para validación, tipado y sanitización de requests en Express. Inclu
 
 - NPM: https://www.npmjs.com/package/req-valid-express
 
-### 2) hibridApiExpress — Hybrid SSR + SPA (Express + EJS + React)
+### 2) hibrid-api-express-26 — Hybrid SSR + SPA (Express + TypeScript + EJS + React)
 
 Aplicación híbrida: páginas públicas SSR + panel admin SPA.  
 

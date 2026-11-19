@@ -24,7 +24,7 @@ Librería para validación, tipado y sanitización de requests en Express. Inclu
 
 Aplicación híbrida: páginas públicas SSR + panel admin SPA.  
 
-- Repo: https://github.com/antorrg/hibridApiExpress
+- Repo: https://github.com/antorrg/hibrid-api-express-26
 
 - Demo: https://hibridapiexpress.onrender.com
 

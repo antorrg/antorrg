@@ -28,9 +28,11 @@ CLI interactivo y sin dependencias para generar proyectos backend en TypeScript
   
 - NPM: https://www.npmjs.com/package/servers-creator
 
-### 3) hibrid-api-express-26 — Hybrid SSR + SPA (Express + TypeScript + EJS + React)
+### 3) hibrid-api-express-26 — Hybrid SSR + SPA Backend híbrido (Express + TypeScript + EJS + React)
 
-Aplicación híbrida: páginas públicas SSR + panel admin SPA.  
+Un único servidor con tres roles: renderiza las páginas públicas con EJS (SSR),
+expone una API REST protegida con API key que alimenta el sitio Cartas, y sirve
+un panel de administración en React (SPA) desde el que se gestiona todo el contenido.
 
 - Repo: https://github.com/antorrg/hibrid-api-express-26
 

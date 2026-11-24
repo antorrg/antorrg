@@ -1,12 +1,12 @@
 # Antonio Rodriguez — Backend Developer (Node.js / TypeScript)
 
-Backend developer especializado en **Node.js** y **TypeScript**. Construyo **APIs REST**, aplicaciones **SSR + SPA** y herramientas reutilizables con **testing automatizado**.  
+Backend developer especializado en arquitectura explícita (DDD, capas, errores tipados) con **Node.js** y **TypeScript**,". Construyo **APIs REST**, aplicaciones **SSR + SPA** y herramientas reutilizables con **testing automatizado**.  
 Autor de librerías publicadas en **NPM**.
 
 - 🧩 Backend: Node.js, Express, TypeScript, REST, JWT
 - 🗄️ DB: PostgreSQL, MongoDB | Sequelize, Prisma
 - 🧪 Testing: Vitest, Jest (unit/integration)
-- ☁️ Deploy: Render, Raillway | Integraciones: Cloudinary, Firebase
+- ☁️ Deploy: Render, Railway | Integraciones: Cloudinary, Firebase
 
 ---
 

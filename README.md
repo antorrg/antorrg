@@ -23,7 +23,9 @@ Librería para validación, tipado y sanitización de requests en Express. Inclu
 ### 2) servers-creator — NPM package / CLI (TypeScript)
 CLI interactivo y sin dependencias para generar proyectos backend en TypeScript
 (Express/Fastify, arquitectura por capas/Feature-based). En desarrollo activo.
+
 - Repo: https://github.com/antorrg/servers-creator
+  
 - NPM: https://www.npmjs.com/package/servers-creator
 
 ### 3) hibrid-api-express-26 — Hybrid SSR + SPA (Express + TypeScript + EJS + React)
